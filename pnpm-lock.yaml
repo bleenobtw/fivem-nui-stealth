@@ -4,10 +4,15 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+patchedDependencies:
+  carlo@0.9.46:
+    hash: g7ygk3xk7h2buc6ysshdj7oj3a
+    path: patches/carlo@0.9.46.patch
+
 dependencies:
   carlo:
     specifier: ^0.9.46
-    version: 0.9.46
+    version: 0.9.46(patch_hash=g7ygk3xk7h2buc6ysshdj7oj3a)
   ws:
     specifier: ^8.16.0
     version: 8.16.0
@@ -83,7 +88,7 @@ packages:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
     dev: false
 
-  /carlo@0.9.46:
+  /carlo@0.9.46(patch_hash=g7ygk3xk7h2buc6ysshdj7oj3a):
     resolution: {integrity: sha512-FwZ/wxjqe+5RgzF2SRsPSWsVB9+McAVRWW0tRkmbh7fBjrf3HFZZbcr8vr61p1K+NBaAPv57DRjxgIyfbHmd7g==}
     engines: {node: '>=7.6.0'}
     dependencies:
@@ -94,6 +99,7 @@ packages:
       - supports-color
       - utf-8-validate
     dev: false
+    patched: true
 
   /concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}

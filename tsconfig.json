@@ -18,6 +18,6 @@
 
     "lib": ["es2022"],
   },
-  "include": ["src"],
+  "include": ["main"],
   "exclude": ["**/node_modules"]
 }
