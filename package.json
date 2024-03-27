@@ -18,5 +18,10 @@
     "@types/node": "^20.11.30",
     "@types/ws": "^8.5.10",
     "typescript": "^5.4.3"
+  },
+  "pnpm": {
+    "patchedDependencies": {
+      "carlo@0.9.46": "patches/carlo@0.9.46.patch"
+    }
   }
 }

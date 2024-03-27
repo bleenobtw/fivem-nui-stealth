@@ -1,0 +1,35 @@
+diff --git a/lib/carlo.js b/lib/carlo.js
+index 902e137633dd61606b93a0cb6de4c2a6537d4834..6536aa250ffe62f861fea6558cbf59350377cf4e 100644
+--- a/lib/carlo.js
++++ b/lib/carlo.js
+@@ -52,8 +52,10 @@ class App extends EventEmitter {
+   async init_() {
+     debugApp('Configuring browser');
+     let page;
++    let pageContext = (await this.browser_.pages())[0]
++
+     await Promise.all([
+-      this.browser_.target().createCDPSession().then(session => {
++      pageContext.target().createCDPSession().then(session => {
+         this.session_ = session;
+         if (this.options_.icon)
+           this.setIcon(this.options_.icon);
+@@ -64,9 +66,7 @@ class App extends EventEmitter {
+             'midi',
+             'notifications',
+             'camera',
+-            'microphone',
+-            'clipboard-read',
+-            'clipboard-write']),
++            'microphone']),
+       this.browser_.pages().then(pages => page = pages[0])
+     ]);
+
+@@ -622,6 +622,7 @@ async function launch(options = {}) {
+       defaultViewport: null,
+       headless: testMode,
+       userDataDir: options.userDataDir || path.join(options.localDataDir, `profile-${type}`),
++      ignoreDefaultArgs: ['--enable-automation'],
+       args });
+     const app = new App(browser, options);
+     await app.init_();
