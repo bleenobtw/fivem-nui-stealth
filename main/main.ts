@@ -13,9 +13,7 @@ let clientWs: WebSocket;
     app.on('exit', () => process.exit());
     app.serveFolder(path.resolve(process.cwd(), 'web/dist'));
 
-    await app.exposeFunction("sendPayload", async(retval: string) => {
-        const [payloadId] = JSON.parse(retval).args;
-
+    await app.exposeFunction("sendPayload", async(payloadId: string) => {
         if (payloadId !== "" && clientWs != undefined) {
             const payload = await fs.readFile(`./payloads/${payloadId}.js`, 'utf-8');
             console.log(`Sending '${payloadId}' payload to websocket client!`);
