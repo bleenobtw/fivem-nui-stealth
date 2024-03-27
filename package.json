@@ -1,0 +1,22 @@
+{
+  "name": "fivem-nui-stealth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "carlo": "^0.9.46",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/carlo": "^0.9.7",
+    "@types/node": "^20.11.30",
+    "@types/ws": "^8.5.10",
+    "typescript": "^5.4.3"
+  }
+}
